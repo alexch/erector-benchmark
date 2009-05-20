@@ -1,0 +1,6 @@
+<ul class="tree">
+<% trunks.to_i.times do |i| %>
+    <li>Trunk <%=i%></li>
+    <%= erb :branch, :locals => {:branches => (branches.to_i - 1)} %>
+<% end %>
+</ul>
