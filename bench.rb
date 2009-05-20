@@ -45,6 +45,9 @@ class Bench < Sinatra::Base
     s = Trunk.new(:trunks => 2, :branches => 2).to_s(:output => "").size
     e = erb(:trunk, :locals => {:trunks => 2, :branches => 2}).size
     Erector::Widget.new do
+      p a == s
+      p a == e
+      p s == e
       p "erec_a: #{a}"
       p "erec_s: #{s}"
       p "erb: #{e}"
