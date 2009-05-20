@@ -15,15 +15,21 @@ def bench(path = "", tries = 500)
   rps.to_i
 end
 
-puts "rps\terb\terector\tfaster"
-[1,2,5].each do |trunks|
-  [1,2,5].each do |branches|
+engines = [:erb, :erec_s, :erec_a]
+puts "tree\t#{engines.join("\tfaster\t")}\tfaster"
+[1,2,3].each do |trunks|
+  [1,2,3].each do |branches|
     rps = {}
-    [:erb, :erector].each do |engine|
+    engines.each do |engine|
       rps[engine] = bench("#{engine}/#{trunks}/#{branches}")
     end
-    faster = ((rps[:erector] - rps[:erb])/rps[:erb].to_f) * 100
-    puts "#{trunks}x#{branches}\t#{rps[:erb]}\t#{rps[:erector]}\t#{'%.1f%%' % faster}"
+    print "#{trunks}x#{branches}"
+    engines.each do |engine|
+      faster = ((rps[engine] - rps[:erb])/rps[:erb].to_f) * 100
+      print "\t#{rps[engine]}"
+      print "\t#{'%.1f%%' % faster}"
+    end
+    puts
   end
 end
 
