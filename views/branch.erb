@@ -1,1 +1,0 @@
-<ul class="branch"><% branches.to_i.times do |i| %><li>Branch <%=i%></li><%= erb(:branch, :locals => {:branches => branches.to_i - 1}) %><% end %></ul>
