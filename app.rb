@@ -33,4 +33,4 @@ puts "tree\t#{engines.join("\tfaster\t")}\tfaster"
   end
 end
 
-Thread.kill(thread)
+# Thread.kill(thread)
