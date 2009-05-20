@@ -1,0 +1,8 @@
+--- 
+erector: 
+  squashed: true
+  url: git://github.com/pivotal/erector.git
+  type: git
+  revision: a71a7d3d7cd5d047d67e4a89390c553565e5594a
+  branch: master
+  remote: braid/erector
