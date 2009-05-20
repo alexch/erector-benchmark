@@ -1,6 +1,6 @@
-* gem install sinatra
+* gem install sinatra haml
 
-* ruby app.rb
+* ruby benchmark.rb
 
 * results are in requests-per-second
 
